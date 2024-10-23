@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Product Price List</title>
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+      
+      /* Header Styling */
+      header {
+        background: linear-gradient(45deg, #333333, #555555);
+        color: #f4c430;
+        padding: 20px 0;
+        text-align: center;
+      }
+      
+      header h1 {
+        margin: 0;
+        font-size: 2.5em;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      
+      /* Container */
+      .container {
+        width: 80%;
+        margin: 0 auto;
+      }
+      
+      /* Grid for Product Items */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+        gap: 20px;
+        margin-top: 40px;
+      }
+      
+      /* Product Box Styling */
+      .item {
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-top: 5px solid #f4c430;
+      }
+      
+      .item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      }
+      
+      .item img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 15px;
+      }
+      
+      /* Product Text Styling */
+      .item h2 {
+        font-size: 1.4em;
+        margin-bottom: 10px;
+        color: #333333;
+        text-transform: capitalize;
+      }
+      
+      .item p {
+        color: #777777;
+        margin-bottom: 10px;
+        font-size: 0.95em;
+      }
+      
+      .price {
+        font-size: 1.8em;
+        color: #f4c430;
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+      }
+      
+      /* Footer Styling */
+      footer {
+        background: #333333;
+        color: #f4c430;
+        padding: 15px 0;
+        text-align: center;
+      }
+      
+      footer p {
+        margin: 0;
+        font-size: 0.85em;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .container {
+          width: 95%;
+        }
+      
+        header h1 {
+          font-size: 2em;
+        }
+      
+        .item h2 {
+          font-size: 1.3em;
+        }
+      
+        .price {
+          font-size: 1.5em;
+        }
+      }
+      </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Our Product  List JBK store</h1>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search products..." onkeyup="searchProducts()">
+        <i class="search-icon">&#128269;</i> <!-- Unicode for magnifying glass icon -->
+      </div>
+    </div>
+  </header>
+
+  <!-- Price List Section -->
+  <section class="price-list">
+    <div class="container grid" id="productList">
+
+      <!-- Product 1 -->
+      <div class="item">
+        <img src="hoco-x89.jpg" alt="Cable">
+        <h2>iPhone Cable (1m)</h2>
+        <p>High-quality iPhone charging cable.</p>
+        
+      </div>
+
+ <!-- Product 2 -->
+ <div class="item">
+  <img src="cable type c.jpg" alt="cable">
+  <h2>cable type c (1m) </h2>
+  <p>High-quality samsung charging cable type-c</p>
+ 
+</div>
+
+      <!-- Product 3 -->
+      <div class="item">
+        <img src="x89.webp" alt="cables">
+        <h2>samsung cable C2C (1m) </h2>
+        <p>High-quality  cable type-c to type-c.</p>
+        
+      </div>
+
+      <!-- Product 4 -->
+      <div class="item">
+        <img src="silicone-cover-samsung-galaxy-a54-4g-transparent.webp" alt="cover">
+        <h2>samsung silicone cover</h2>
+        <p>Original Silicone Case for samsung.</p>
+      
+      </div>
+
+     <!-- Product 5 -->
+     <div class="item">
+      <img src="OriginalSiliconeCases.webp" alt="cover">
+      <h2>iphone silicone cover</h2>
+      <p>Original Silicone Case for iPhone Series.</p>
+      
+    </div>
+     <!-- Product 5 -->
+     <div class="item">
+      <img src="IPHONE TRANSP.jpg" alt="cover">
+      <h2>iphone silicone cover TRANSPARENT</h2>
+      <p>Original Silicone Case for iPhone Series.</p>
+    </div>
+  
+    <div class="item">
+      <img src="protection-IPHONE.webp" alt="PROTECTION ">
+      <h2>PROTECTION FOR IPHONE </h2>
+      <p>IPHONE 7/X/11/11PROMAX/12/12PRO/
+        12PROMAX/
+        13/13PROMAX/
+        14PRO/14PROMAX/
+        15 PRO/15PROMAX </p>
+    </div>
+    
+    <div class="item">
+      <img src="SAMSUNG PROTECTION.jpg" alt="PROTECTION ">
+      <h2>PROTECTION FOR SAMSUNG </h2>
+      <p> </p>
+    </div>
+    
+
+      <!-- Product 6 -->
+      <div class="item">
+        <img src="c135 rock pd20w+qc3.0.jpg" alt="adapter">
+        <h2>adapter for iphone</h2>
+        <p>>High-quality iphone charging adapter & cable type-c to iphone.</p>
+      </div>
+
+      <!-- Product 7 -->
+      <div class="item">
+        <img src="usb c to lighting.jpg" alt="Cable">
+        <h2>usb c to lightning</h2>
+        <p>Original iPhone charging cable type c to lightning(1m).</p>
+      </div>
+
+      <!-- Product 8 -->
+      <div class="item">
+        <img src="type c earphones akg.webp" alt="EARPHONES">
+        <h2>earphones samsung type-c AKG</h2>
+        <p>Original samsung earphones type c by AKG</p>
+      </div>
+
+      <!-- Product 9 -->
+      <div class="item">
+        <img src="EARPODS USB-C.jpeg" alt="Earphones">
+        <h2>Earpods usb-c</h2>
+        <p>Original iphone earphones type c by Apple.</p>
+      </div>
+
+      <!-- Product 10 -->
+      <div class="item">
+        <img src="tplink extender tlwa850re.jpg" alt="extender">
+        <h2>tp-link range extender TL-WA850RE</h2>
+        <p>Wifi range extender TP-LINK TLWA850RE.</p>
+      </div>
+
+      <!-- Product 11 -->
+      <div class="item">
+        <img src="TPLINK ROUTER TDW9950.jpg" alt="TD-W9950">
+        <h2>TP-LINK MODEM ROUTER W9950 </h2>
+        <p>TP-LINK MODERN ROUTER TD-W9950 300 Mbps Wifi VDSL/ADSL.</p>
+      </div>
+
+      <!-- Product 12 -->
+      <div class="item">
+        <img src="TD-W8961.jpg" alt="TD-W8961N">
+        <h2>TP-LINK MODEM ROUTER W8961N</h2>
+        <p>TP-LINK MODERN ROUTER TD-W8961N 300 Mbps Wifi ADSL2+.</p>
+      </div>
+
+      <!-- Product 13 -->
+      <div class="item">
+        <img src="TL-WR841N.jpg" alt="TL-WR841N">
+        <h2>TP-LINK MODEM ROUTER TL-WR841N</h2>
+        <p>TP-LINK MODERN ROUTER TD-W8961N 300 MbpS Wireless N Router.</p>
+      </div>
+
+      <!-- Product 14 -->
+      <div class="item">
+        <img src="hoco headset w35.jpg" alt="headset">
+        <h2>hoco w35 headset</h2>
+        <p>hoco headset w35 multi modes (aux-flash memory-bluetooth).</p>
+      </div>
+
+      <!-- Product 15 -->
+      <div class="item">
+        <img src="hoco-w46.webp" alt="headset ">
+        <h2>hoco w46 headset</h2>
+        <p>hoco headset w46 multi modes (aux-bluetooth).</p>
+      </div>
+
+      <!-- Product 16 -->
+      <div class="item">
+        <img src="hoco ac21.jpg" alt="Charging ralonge">
+        <h2>multifunctional safety socket AC21</h2>
+        <p>MultiFUNCTIONAL SAFETY SOCKET USB-C+ USB-A x 3+socket x 4(1.5m)  .</p>
+      </div>
+
+      <!-- Product 17 -->
+      <div class="item">
+        <img src="bs47.jpg" alt="BT-speaker ">
+        <h2>BT Sport Wireless speaker BS47</h2>
+        <p>BT SPEAKER HOCO 360º.</p>
+      </div>
+
+      <!-- Product 18 -->
+      <div class="item">
+        <img src="hoco-hc16.jpg" alt="BT-speaker">
+        <h2> BT Sport Wireless speaker HC16</h2>
+        <p>BT SPEAKER HOCO 360º .</p>
+        
+      </div>
+
+      <!-- Product 19 -->
+      <div class="item">
+        <img src="hoco-hc25.jpg" alt="BT-speaker">
+        <h2>BT Sport Wireless speaker HC25</h2>
+        <p>BT SPEAKER HOCO 360º.</p>
+      </div>
+
+      <!-- Product 20 -->
+      <div class="item">
+        <img src="Q26A.jpg" alt="Power bank">
+        <h2>power bank Wireless charger (10000 Mah pd20w) </h2>
+        <p>magnetic wireless charging ultra-slim power bank and wired charging.</p>
+      </div>
+
+      <!-- Product 21 -->
+      <div class="item">
+        <img src="hoco-y3.webp" alt="SMART WATCH">
+        <h2>watch y3 pro</h2>
+        <p>smart watch by hoco y3 pro.</p>
+      </div>
+
+      <!-- Product 22 -->
+      <div class="item">
+        <img src="y12.jpg" alt="smart watch">
+        <h2>watch y12</h2>
+        <p>smart watch by hoco y12.</p>
+      </div>
+
+      <!-- Product 23 -->
+      <div class="item">
+        <img src="hoco-e51.jpg" alt="car wireless">
+        <h2> BT Car wireless Fm</h2>
+        <p>bluetooth car wireless 3 output (2 usb+ 1 type-c)+Led and a clear call.</p>
+      </div>
+
+      <!-- Product 24 -->
+      <div class="item">
+        <img src="UPA30.jpg" alt="AUX">
+        <h2>AUX IP TO 3.5 mm (1m)</h2>
+        <p>AUX ip to 3.5 mm audio cable .</p>
+      </div>
+
+      <!-- Product 25 -->
+      <div class="item">
+        <img src="aux 3.5to3.5.jpg" alt="AUX">
+        <h2>AUX 3.5 mm to 3.5 mm (1m)</h2>
+        <p>AUX 3.5 mm to 3.5 mm audio cable.</p>
+      </div>
+
+   <!-- Product 27 -->
+   <div class="item">
+    <img src="UPA30HO.jpg" alt="Car wireless">
+    <h2>USB C  to 3.5 mm (1m) </h2>
+    <p>USB C  to 3.5 mm audio cable .</p>
+  </div>
+
+      <!-- Product 26 -->
+      <div class="item">
+        <img src="z46A hoco.jpg" alt="car wireless">
+        <h2>BT Car wireless Fm</h2>
+        <p>bluetooth car wireless TYPE C.</p>
+      </div>
+
+      <!-- Product 27 -->
+      <div class="item">
+        <img src="hoco-z46a-TYPE C TO IP.jpg" alt="Car wireless">
+        <h2>BT Car wireless Fm TO IPHONE </h2>
+        <p>bluetooth car wireless TYPE C to IPHONE.</p>
+      </div>
+
+        <!-- Product 27 -->
+        <div class="item">
+          <img src="hoco-e72-.jpg" alt="Car wireless">
+          <h2>BT Car wireless Fm </h2>
+          <p>bluetooth car wireless FM TRANSMITTER .</p>
+        </div>
+  
+         <!-- Product 27 -->
+         <div class="item">
+          <img src="E76.jpeg" alt="Car wireless">
+          <h2>BT Car wireless Fm </h2>
+          <p>bluetooth car wireless FM TRANSMITTER .</p>
+        </div>
+  
+      <!-- Product 29 -->
+      <div class="item">
+        <img src="Hoco-GM109.webp" alt="pencil">
+        <h2>Hoco pencil for iphone and android and windows system</h2>
+        <p>high quality pencil for all devices</p>
+      </div>
+
+      <!-- Product 29 -->
+      <div class="item">
+        <img src="hoco-ua31c.jpg" alt="mini size usb">
+        <h2>Adapter Type-C to USB-A "UA31C" - HOCO</h2>
+        <p>Portable adapter Type-C to USB-A.
+          OTG function.
+          Supports 5Gbps data transfer.
+          Supports fast charging.</p>
+      </div>
+       
+       <div class="item">
+        <img src="hoco-ua31a-lt.jpg" alt="mini size usb">
+        <h2>Adapter for Lightning to USB-A "UA31A" - HOCO </h2>
+        <p>Portable adapter Lightning to USB-A.
+          OTG function.
+          Supports 5Gbps data transfer.
+          Supports fast charging.</p>
+      </div>
+
+      <div class="item">
+        <img src="hoco-h45.jpg" alt="car holder">
+        <h2>hoco car holder magnetic </h2>
+          <p>In-car magnetic phone holder.
+            For 4.5 to 7 inches mobile devices.
+            For dashboard.</p>
+      </div>
+
+      <div class="item">
+        <img src="h17.jpg" alt="car holder">
+        <h2>Hoco, H17 Waves Rearview Mirror Car Holder</h2>
+        <p>Portable adapter Lightning to USB-A.
+          OTG function.
+          Supports 5Gbps data transfer.
+          Supports fast charging.</p>
+      </div>
+
+      <div class="item">
+        <img src="hoco-ca119.jpg" alt="moto holder">
+        <h2>Motorcycle holder "CA119 Follow" for rearview mirror- HOCO </h2>
+        <p>Motorcycle phone holder.
+          For 4.5 to 7 inches mobile devices.</p>
+      </div>
+
+      <div class="item">
+        <img src="Hoco-H20.jpg" alt="car holder">
+        <h2>Hoco H20 Mighty One Button Windshield Car Holder- HOCO </h2>
+        <p>Phone Holder Strong Clamping Long Arm Adjustable Rod</p>
+      </div>
+      <div class="item">
+        <img src="hoco-hw11.jpg" alt="car holder">
+        <h2>Car wireless charger "HW11 Jenny" for dashboard-hoco </h2>
+        <p>In-car wireless charging phone holder.
+          5W / 7.5W / 10W / 15W wireless output.
+          For 4.5 to 7 inches mobile devices.</p>
+      </div>
+      <div class="item">
+        <img src="hoco-cw41.jpg" alt="magnetic charge">
+        <h2>Wireless charger "CW41 Delight" 15W magnetic </h2>
+        <p>CW41 Delight, magnetic wireless charger, 2.5W / 5W / 7.5W / 10W / 15W output, for Apple Watch, phones, headset.</p>
+      </div>
+
+      <div class="item">
+        <img src="hoco cw39c.webp" alt="magnetic charge">
+        <h2>Wireless charger "CW39  15W magnetic </h2>
+        <p>CW41 Delight, magnetic wireless charger,for Apple Watch 7/6/5/4/3/2/1/se.</p>
+      </div>
+      <div class="item">
+        <img src="hoco ew59.jpg" alt="airbuds">
+        <h2>Hoco EW59 airbuds</h2>
+        <p>Hoco EW59 True Wireless BT Earbuds 4h call/music </p>
+      </div>
+
+      <div class="item">
+        <img src="EW72.jpg" alt="airbuds">
+        <h2>HOCO EW72 airbuds </h2>
+        <p>HOCO EW72 Wireless Headphones with Charging Case (BT v5.4) Noise Reduction ENC</p>
+      </div>
+
+      <div class="item">
+        <img src="Hoco-EW64.webp" alt="airbuds">
+        <h2>HOCO EW64 airbuds </h2>
+        <p>HOCO EW64 Wireless Headphones with Charging Case (BT v5.4) Noise Reduction ENC</p>
+      </div>
+
+      <div class="item">
+        <img src="m101 hoco.jpg" alt="earphones">
+        <h2>HOCO M101 Earphones with microphone 3,5mm </h2>
+        <p>HOCO M101 Earphones with microphone 3,5mm </p>
+      </div>
+
+      <div class="item">
+        <img src="m101c.jpg" alt="earphones">
+        <h2>HOCO M101 Earphones with microphone type-c </h2>
+        <p>HOCO M101 Earphones with microphone type-c</p>
+      </div>
+
+      <div class="item">
+        <img src="c76a.jpg" alt="adapter">
+        <h2>Hoco C76A Plus Speed source PD20W charger</h2>
+        <p>Hoco C76A Plus - Speed Source PD/QC3.0/FCP Fast Charging EU Plug USB-C Charger (20W - 3.1A - 5V)</p>
+      </div>
+      <div class="item">
+        <img src="hoco c76 a pro.webp" alt="adapter">
+        <h2>Hoco C76A pro Plus Speed source PD20W charger</h2>
+        <p>Wall charger "C76A Speed source" PD3.0 EU Type-C output set with cable - HOCO </p>
+      </div>
+      <div class="item">
+        <img src="ring light.jpeg" alt="ring light ">
+        <h2>RGB Led 3D-56 Livestreaming Lamp Ring Light</h2>
+        <p>56 cm 7 colors </p>
+      </div>
+      <div class="item">
+        <img src="3d 36.jpg" alt="ring light ">
+        <h2>RGB Led 3D-36 Livestreaming Lamp Ring Light</h2>
+        <p>36 cm 7 colors </p>
+      </div> 
+
+      <div class="item">
+        <img src="cs52a.jpg" alt="adapter">
+        <h2>one of the best adapter from hoco</h2>
+        <p> </p>
+      </div>
+
+      <div class="item">
+        <img src="45ws.jpeg" alt="adapter">
+        <h2>original adapter from samsung fast charge 45 w and 25 w</h2>
+        <p>one of the best adapter from samsung fast charge 45 w and 25 w </p>
+      </div>
+      <div class="item">
+        <img src="HD9.jpeg" alt="HOLDER">
+        <h2> HOLDER FOR LAPTOP FAN </h2>
+        <p> </p>
+      </div>
+      <div class="item">
+        <img src="memory card.jpeg" alt="memory card ">
+        <h2>memory card for phone </h2>
+        <p> </p>
+      </div>
+
+      <div class="item">
+        <img src="samsung type b.jpg" alt="cables ">
+        <h2>samsung type b cable </h2>
+        <p> </p>
+      </div>
+      <div class="item">
+        <img src="Samsung-Earphone-A23-Blue-Heads-1.jpg" alt="earphones">
+        <h2>samsung earphones </h2>
+        <p> </p>
+      </div>
+      <div class="item">
+        <img src="iphone jack.jpg" alt="cables ">
+        <h2>iphone jack lightning to 3.5 mm </h2>
+        <p> </p>
+      </div>
+    
+      <div class="item">
+        <img src="magafe-case.jpg" alt="cover">
+        <h2>magnetic phone case</h2>
+        <p> for s24/+/ultra 23/+/ultra iphone 12 pro max/13 pro max/14 pro /15 pro/15/15 pro max/16/16 pro/16 promax </p>
+      </div>
+     
+      <div class="item">
+        <img src="65w3p.jpg" alt="adapter ">
+        <h2>original samsung adapter 65 watt 3 port  </h2>
+        <p> </p>
+      </div>
+
+      <div class="item">
+        <img src="mouse.webp" alt="mouse ">
+        <h2>hoco mouse</h2>
+        <p> </p>
+      </div>
+
+      <div class="item">
+        <img src="camera lens.webp" alt="camera lens ">
+        <h2>camera  lens </h2>
+        <p> for iphone 12/12 pro/12 pro max/13 /13 pro /13 pro max/14 /14 pro /14 pro max /15/ 15pro /15 pro max/ s23 ultras /23 / 23plus /s24 ultras</p>
+      </div>
+
+      <div class="item">
+        <img src="hoco-x88.webp" alt="cables ">
+        <h2>cable C to IPHONE  </h2>
+        <p>  </p>
+      </div>
+      <div class="item">
+        <img src="ting holder hoco.jpg" alt="HOLDER ">
+        <h2>ting holder magnetic </h2>
+        <p>  </p>
+      </div>
+
+      <div class="item">
+        <img src="hdmi cablee.webp" alt="cables ">
+        <h2>HDMI CABLE  </h2>
+        <p>1 METER/ 2 METERS/ 3 METERS  </p>
+      </div>
+
+      <div class="item">
+        <img src="STICKIT.avif" alt="cables ">
+        <h2>STICK IT </h2>
+        <p> UP TO 5 COLOR STICK IT </p>
+      </div>
+    
+      <div class="item">
+        <img src="MAGSAFE POWER BANK.jpeg" alt="POWER BANK ">
+        <h2>APPLE POWER BANK  magnetic </h2>
+        <p>  </p>
+      </div>
+    
+      <div class="item">
+        <img src="HOLDER STICK IT.webp" alt="Car">
+        <h2>CAR HOLDER STICK</h2>
+        <p>  </p>
+      </div>
+    
+      <div class="item">
+        <img src="7 IN 1 CLEANER.jpg" alt="Car">
+        <h2>PHONE CLEANER </h2>
+        <p>  Have cleaning brush ,used to remove dirt particles and debris. Safe and eco friendly. have a soft fiber cloth easy for clean</p>
+      </div>
+    
+      <div class="item">
+        <img src="AIRPODS SILICONE CASE.webp" alt="Car">
+        <h2>PHONE CLEANER </h2>
+        <p> AIRPODS PRO 1 /PRO 2 /PRO 3 </p>
+      </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 JBK. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function searchProducts() {
+      const input = document.getElementById("searchInput");
+      const filter = input.value.toLowerCase();
+      const productItems = document.getElementsByClassName("item");
+
+      for (let i = 0; i < productItems.length; i++) {
+        const productName = productItems[i].getElementsByTagName("h2")[0];
+        if (productName.innerHTML.toLowerCase().indexOf(filter) > -1) {
+          productItems[i].style.display = "";
+        } else {
+          productItems[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+</body>
+</html>

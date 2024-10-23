@@ -6,126 +6,153 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Product Price List</title>
   <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      
-      body {
-        font-family: 'Poppins', sans-serif;
-        line-height: 1.6;
-        background-color: #f4f4f4;
-        color: #333;
-      }
-      
-      /* Header Styling */
-      header {
-        background: linear-gradient(45deg, #333333, #555555);
-        color: #f4c430;
-        padding: 20px 0;
-        text-align: center;
-      }
-      
-      header h1 {
-        margin: 0;
-        font-size: 2.5em;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-      }
-      
-      /* Container */
-      .container {
-        width: 80%;
-        margin: 0 auto;
-      }
-      
-      /* Grid for Product Items */
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-        gap: 20px;
-        margin-top: 40px;
-      }
-      
-      /* Product Box Styling */
-      .item {
-        background: #fff;
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border-top: 5px solid #f4c430;
-      }
-      
-      .item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-      }
-      
-      .item img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-        margin-bottom: 15px;
-      }
-      
-      /* Product Text Styling */
-      .item h2 {
-        font-size: 1.4em;
-        margin-bottom: 10px;
-        color: #333333;
-        text-transform: capitalize;
-      }
-      
-      .item p {
-        color: #777777;
-        margin-bottom: 10px;
-        font-size: 0.95em;
-      }
-      
-      .price {
-        font-size: 1.8em;
-        color: #f4c430;
-        font-weight: bold;
-        letter-spacing: 1px;
-        margin-bottom: 10px;
-      }
-      
-      /* Footer Styling */
-      footer {
-        background: #333333;
-        color: #f4c430;
-        padding: 15px 0;
-        text-align: center;
-      }
-      
-      footer p {
-        margin: 0;
-        font-size: 0.85em;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-      }
-      
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        .container {
-          width: 95%;
-        }
-      
-        header h1 {
-          font-size: 2em;
-        }
-      
-        .item h2 {
-          font-size: 1.3em;
-        }
-      
-        .price {
-          font-size: 1.5em;
-        }
-      }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f4c430; /* Changed to yellow */
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(45deg, #333333, #555555);
+    color: #f4c430;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Grid for Product Items */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    margin-top: 40px;
+}
+
+/* Product Box Styling */
+.item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid #57544b;
+}
+
+.item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Product Text Styling */
+.item h2 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: #333333;
+    text-transform: capitalize;
+}
+
+.item p {
+    color: #777777;
+    margin-bottom: 10px;
+    font-size: 0.95em;
+}
+
+.price {
+    font-size: 1.8em;
+    color: #f4c430;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+/* Footer Styling */
+footer {
+    background: #333333;
+    color: #f4c430;
+    padding: 15px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.85em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted minimum size */
+        gap: 15px; /* Slightly reduce the gap */
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .item h2 {
+        font-size: 1.3em;
+    }
+
+    .price {
+        font-size: 1.5em;
+    }
+
+    .item {
+        padding: 15px; /* Reduced padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller grid items for very small screens */
+    }
+
+    .item h2 {
+        font-size: 1.2em;
+    }
+
+    .price {
+        font-size: 1.3em;
+    }
+
+    .item {
+        padding: 10px; /* Further reduced padding */
+    }
+}
       </style>
 </head>
 <body>

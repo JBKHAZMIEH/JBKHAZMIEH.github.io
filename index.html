@@ -57,7 +57,7 @@ header h1 {
 
 /* Product Box Styling */
 .item {
-    background: #fff;
+    background: #dce1e4;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -160,26 +160,68 @@ footer p {
         padding: 10px; /* Further reduced padding */
     }
 }
-      </style>
+  .toolbox {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .toolbox button {
+      background-color: #333333;
+      color: #f4c430;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .toolbox button:hover {
+      background-color: #555555;
+    }
+
+    .toolbox button.active {
+      background-color: #f4c430;
+      color: #333333;
+    }
+  </style>
 </head>
 <body>
 
   <header>
     <div class="container">
-      <h1>Our Product  List JBK store</h1>
-      <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Search products..." onkeyup="searchProducts()">
-        <i class="search-icon">&#128269;</i> <!-- Unicode for magnifying glass icon -->
+      <h1>Our Product List JBK Store</h1>
+    
+      <!-- Add the toolbox for category filtering -->
+      <div class="toolbox">
+        <button onclick="filterProducts('all')" class="active">All</button>
+        <button onclick="filterProducts('cables')">Cables</button>
+        <button onclick="filterProducts('adapters')">Adapters</button>
+        <button onclick="filterProducts('covers')">Covers</button>
+        <button onclick="filterProducts('Protection')">Protection</button>
+        <button onclick="filterProducts('headsets')">Headsets</button>
+        <button onclick="filterProducts('earphones')">Earphones</button>
+        <button onclick="filterProducts('smartwatches')">Smart Watch</button>
+        <button onclick="filterProducts('airbuds')">Airbuds</button>
+        <button onclick="filterProducts('speakers')">Speakers</button>
+        <button onclick="filterProducts('powerbanks')">Power Banks</button>
+        <button onclick="filterProducts('laptop')">Laptop Items</button>
+        <button onclick="filterProducts('accessories')">Accessories</button>
+        <button onclick="filterProducts('router')">Routers</button>
+        <button onclick="filterProducts('car-accessories')">Car Accessories</button>
+     
       </div>
     </div>
   </header>
+
 
   <!-- Price List Section -->
   <section class="price-list">
     <div class="container grid" id="productList">
 
       <!-- Product 1 -->
-      <div class="item">
+      <div class="item" data-category="cables">
         <img src="hoco-x89.jpg" alt="Cable">
         <h2>iPhone Cable (1m)</h2>
         <p>High-quality iPhone charging cable.</p>
@@ -187,7 +229,7 @@ footer p {
       </div>
 
  <!-- Product 2 -->
- <div class="item">
+ <div class="item" data-category="cables">
   <img src="cable type c.jpg" alt="cable">
   <h2>cable type c (1m) </h2>
   <p>High-quality samsung charging cable type-c</p>
@@ -195,592 +237,651 @@ footer p {
 </div>
 
       <!-- Product 3 -->
-      <div class="item">
+      <div class="item" data-category="cables">
         <img src="x89.webp" alt="cables">
         <h2>samsung cable C2C (1m) </h2>
         <p>High-quality  cable type-c to type-c.</p>
-        
       </div>
 
       <!-- Product 4 -->
-      <div class="item">
-        <img src="silicone-cover-samsung-galaxy-a54-4g-transparent.webp" alt="cover">
+      <div class="item" data-category="covers">
+        <img src="silicone-cover-samsung-galaxy-a54-4g-transparent.webp" alt="covers">
         <h2>samsung silicone cover</h2>
         <p>Original Silicone Case for samsung.</p>
-      
       </div>
 
      <!-- Product 5 -->
-     <div class="item">
-      <img src="OriginalSiliconeCases.webp" alt="cover">
+     <div class="item" data-category="covers">
+      <img src="OriginalSiliconeCases.webp" alt="covers">
       <h2>iphone silicone cover</h2>
       <p>Original Silicone Case for iPhone Series.</p>
-      
     </div>
+
      <!-- Product 5 -->
-     <div class="item">
-      <img src="IPHONE TRANSP.jpg" alt="cover">
+     <div class="item" data-category="covers">
+      <img src="IPHONE TRANSP.jpg" alt="covers">
       <h2>iphone silicone cover TRANSPARENT</h2>
       <p>Original Silicone Case for iPhone Series.</p>
     </div>
   
-    <div class="item">
-      <img src="protection-IPHONE.webp" alt="PROTECTION ">
-      <h2>PROTECTION FOR IPHONE </h2>
-      <p>IPHONE 7/X/11/11PROMAX/12/12PRO/
-        12PROMAX/
-        13/13PROMAX/
-        14PRO/14PROMAX/
-        15 PRO/15PROMAX </p>
+    <div class="item" data-category="Protection">
+      <img src="protection-IPHONE.webp" alt="Protection">
+      <h2>PROTECTION FOR IPHONE</h2>
+      <p>
+        IPHONE 7/X/11/11PROMAX/12/12PRO/12PROMAX/13/13PROMAX/14PRO/14PROMAX/15 PRO/15PROMAX/16/16pro/16promax
+      </p>
     </div>
     
-    <div class="item">
-      <img src="SAMSUNG PROTECTION.jpg" alt="PROTECTION ">
-      <h2>PROTECTION FOR SAMSUNG </h2>
-      <p> </p>
+    <div class="item" data-category="Protection">
+      <img src="SAMSUNG PROTECTION.jpg" alt="Protection">
+      <h2>PROTECTION FOR SAMSUNG</h2>
+      <p></p>
     </div>
     
 
-      <!-- Product 6 -->
-      <div class="item">
-        <img src="c135 rock pd20w+qc3.0.jpg" alt="adapter">
-        <h2>adapter for iphone</h2>
-        <p>>High-quality iphone charging adapter & cable type-c to iphone.</p>
-      </div>
+   <!-- Product 6 -->
+<div class="item" data-category="adapters">
+  <img src="c135 rock pd20w+qc3.0.jpg" alt="Adapters">
+  <h2>Adapter for iPhone</h2>
+  <p>High-quality iPhone charging adapter & cable type-c to iPhone.</p>
+</div>
 
       <!-- Product 7 -->
-      <div class="item">
+      <div class="item" data-category="cables">
         <img src="usb c to lighting.jpg" alt="Cable">
         <h2>usb c to lightning</h2>
         <p>Original iPhone charging cable type c to lightning(1m).</p>
       </div>
 
-      <!-- Product 8 -->
-      <div class="item">
-        <img src="type c earphones akg.webp" alt="EARPHONES">
-        <h2>earphones samsung type-c AKG</h2>
-        <p>Original samsung earphones type c by AKG</p>
-      </div>
+     <!-- Product 8 -->
+<div class="item" data-category="earphones">
+  <img src="type c earphones akg.webp" alt="EARPHONES">
+  <h2>Earphones Samsung Type-C AKG</h2>
+  <p>Original Samsung earphones type c by AKG.</p>
+</div>
 
-      <!-- Product 9 -->
-      <div class="item">
-        <img src="EARPODS USB-C.jpeg" alt="Earphones">
-        <h2>Earpods usb-c</h2>
-        <p>Original iphone earphones type c by Apple.</p>
-      </div>
+<!-- Product 9 -->
+<div class="item" data-category="earphones">
+  <img src="EARPODS USB-C.jpeg" alt="Earphones">
+  <h2>Earpods USB-C</h2>
+  <p>Original iPhone earphones type c by Apple.</p>
+</div>
 
-      <!-- Product 10 -->
-      <div class="item">
-        <img src="tplink extender tlwa850re.jpg" alt="extender">
-        <h2>tp-link range extender TL-WA850RE</h2>
-        <p>Wifi range extender TP-LINK TLWA850RE.</p>
-      </div>
+<div class="item" data-category="router">
+  <img src="tplink extender tlwa850re.jpg" alt="extender">
+  <h2>tp-link range extender TL-WA850RE</h2>
+  <p>Wifi range extender TP-LINK TLWA850RE.</p>
+</div>
 
-      <!-- Product 11 -->
-      <div class="item">
-        <img src="TPLINK ROUTER TDW9950.jpg" alt="TD-W9950">
-        <h2>TP-LINK MODEM ROUTER W9950 </h2>
-        <p>TP-LINK MODERN ROUTER TD-W9950 300 Mbps Wifi VDSL/ADSL.</p>
-      </div>
+<div class="item" data-category="router">
+  <img src="TPLINK ROUTER TDW9950.jpg" alt="TD-W9950">
+  <h2>TP-LINK MODEM ROUTER W9950 </h2>
+  <p>TP-LINK MODERN ROUTER TD-W9950 300 Mbps Wifi VDSL/ADSL.</p>
+</div>
 
-      <!-- Product 12 -->
-      <div class="item">
-        <img src="TD-W8961.jpg" alt="TD-W8961N">
-        <h2>TP-LINK MODEM ROUTER W8961N</h2>
-        <p>TP-LINK MODERN ROUTER TD-W8961N 300 Mbps Wifi ADSL2+.</p>
-      </div>
+<div class="item" data-category="router">
+  <img src="TD-W8961.jpg" alt="TD-W8961N">
+  <h2>TP-LINK MODEM ROUTER W8961N</h2>
+  <p>TP-LINK MODERN ROUTER TD-W8961N 300 Mbps Wifi ADSL2+.</p>
+</div>
 
-      <!-- Product 13 -->
-      <div class="item">
-        <img src="TL-WR841N.jpg" alt="TL-WR841N">
-        <h2>TP-LINK MODEM ROUTER TL-WR841N</h2>
-        <p>TP-LINK MODERN ROUTER TD-W8961N 300 MbpS Wireless N Router.</p>
-      </div>
+<div class="item" data-category="router">
+  <img src="TL-WR841N.jpg" alt="TL-WR841N">
+  <h2>TP-LINK MODEM ROUTER TL-WR841N</h2>
+  <p>TP-LINK MODERN ROUTER TD-W8961N 300 MbpS Wireless N Router.</p>
+</div>
 
-      <!-- Product 14 -->
-      <div class="item">
-        <img src="hoco headset w35.jpg" alt="headset">
-        <h2>hoco w35 headset</h2>
-        <p>hoco headset w35 multi modes (aux-flash memory-bluetooth).</p>
-      </div>
+     <!-- Product 14 -->
+<div class="item" data-category="headsets">
+  <img src="hoco headset w35.jpg" alt="headset">
+  <h2>hoco w35 headset</h2>
+  <p>hoco headset w35 multi modes (aux-flash memory-bluetooth).</p>
+</div>
 
-      <!-- Product 15 -->
-      <div class="item">
-        <img src="hoco-w46.webp" alt="headset ">
-        <h2>hoco w46 headset</h2>
-        <p>hoco headset w46 multi modes (aux-bluetooth).</p>
-      </div>
+<!-- Product 15 -->
+<div class="item" data-category="headsets">
+  <img src="hoco-w46.webp" alt="headset">
+  <h2>hoco w46 headset</h2>
+  <p>hoco headset w46 multi modes (aux-bluetooth).</p>
+</div>
+
 
       <!-- Product 16 -->
-      <div class="item">
+      <div class="item" data-category="accessories">
         <img src="hoco ac21.jpg" alt="Charging ralonge">
         <h2>multifunctional safety socket AC21</h2>
-        <p>MultiFUNCTIONAL SAFETY SOCKET USB-C+ USB-A x 3+socket x 4(1.5m)  .</p>
-      </div>
-
-      <!-- Product 17 -->
-      <div class="item">
-        <img src="bs47.jpg" alt="BT-speaker ">
-        <h2>BT Sport Wireless speaker BS47</h2>
-        <p>BT SPEAKER HOCO 360º.</p>
-      </div>
-
-      <!-- Product 18 -->
-      <div class="item">
-        <img src="hoco-hc16.jpg" alt="BT-speaker">
-        <h2> BT Sport Wireless speaker HC16</h2>
-        <p>BT SPEAKER HOCO 360º .</p>
-        
-      </div>
-
-      <!-- Product 19 -->
-      <div class="item">
-        <img src="hoco-hc25.jpg" alt="BT-speaker">
-        <h2>BT Sport Wireless speaker HC25</h2>
-        <p>BT SPEAKER HOCO 360º.</p>
-      </div>
-
-      <!-- Product 20 -->
-      <div class="item">
-        <img src="Q26A.jpg" alt="Power bank">
-        <h2>power bank Wireless charger (10000 Mah pd20w) </h2>
-        <p>magnetic wireless charging ultra-slim power bank and wired charging.</p>
-      </div>
-
-      <!-- Product 21 -->
-      <div class="item">
-        <img src="hoco-y3.webp" alt="SMART WATCH">
-        <h2>watch y3 pro</h2>
-        <p>smart watch by hoco y3 pro.</p>
-      </div>
-
-      <!-- Product 22 -->
-      <div class="item">
-        <img src="y12.jpg" alt="smart watch">
-        <h2>watch y12</h2>
-        <p>smart watch by hoco y12.</p>
-      </div>
-
-      <!-- Product 23 -->
-      <div class="item">
-        <img src="hoco-e51.jpg" alt="car wireless">
-        <h2> BT Car wireless Fm</h2>
-        <p>bluetooth car wireless 3 output (2 usb+ 1 type-c)+Led and a clear call.</p>
-      </div>
-
-      <!-- Product 24 -->
-      <div class="item">
-        <img src="UPA30.jpg" alt="AUX">
-        <h2>AUX IP TO 3.5 mm (1m)</h2>
-        <p>AUX ip to 3.5 mm audio cable .</p>
-      </div>
-
-      <!-- Product 25 -->
-      <div class="item">
-        <img src="aux 3.5to3.5.jpg" alt="AUX">
-        <h2>AUX 3.5 mm to 3.5 mm (1m)</h2>
-        <p>AUX 3.5 mm to 3.5 mm audio cable.</p>
-      </div>
-
-   <!-- Product 27 -->
-   <div class="item">
-    <img src="UPA30HO.jpg" alt="Car wireless">
-    <h2>USB C  to 3.5 mm (1m) </h2>
-    <p>USB C  to 3.5 mm audio cable .</p>
-  </div>
-
-      <!-- Product 26 -->
-      <div class="item">
-        <img src="z46A hoco.jpg" alt="car wireless">
-        <h2>BT Car wireless Fm</h2>
-        <p>bluetooth car wireless TYPE C.</p>
-      </div>
-
-      <!-- Product 27 -->
-      <div class="item">
-        <img src="hoco-z46a-TYPE C TO IP.jpg" alt="Car wireless">
-        <h2>BT Car wireless Fm TO IPHONE </h2>
-        <p>bluetooth car wireless TYPE C to IPHONE.</p>
-      </div>
-
-        <!-- Product 27 -->
-        <div class="item">
-          <img src="hoco-e72-.jpg" alt="Car wireless">
-          <h2>BT Car wireless Fm </h2>
-          <p>bluetooth car wireless FM TRANSMITTER .</p>
-        </div>
-  
-         <!-- Product 27 -->
-         <div class="item">
-          <img src="E76.jpeg" alt="Car wireless">
-          <h2>BT Car wireless Fm </h2>
-          <p>bluetooth car wireless FM TRANSMITTER .</p>
-        </div>
-  
-      <!-- Product 29 -->
-      <div class="item">
-        <img src="Hoco-GM109.webp" alt="pencil">
-        <h2>Hoco pencil for iphone and android and windows system</h2>
-        <p>high quality pencil for all devices</p>
-      </div>
-
-      <!-- Product 29 -->
-      <div class="item">
-        <img src="hoco-ua31c.jpg" alt="mini size usb">
-        <h2>Adapter Type-C to USB-A "UA31C" - HOCO</h2>
-        <p>Portable adapter Type-C to USB-A.
-          OTG function.
-          Supports 5Gbps data transfer.
-          Supports fast charging.</p>
-      </div>
-       
-       <div class="item">
-        <img src="hoco-ua31a-lt.jpg" alt="mini size usb">
-        <h2>Adapter for Lightning to USB-A "UA31A" - HOCO </h2>
-        <p>Portable adapter Lightning to USB-A.
-          OTG function.
-          Supports 5Gbps data transfer.
-          Supports fast charging.</p>
-      </div>
-
-      <div class="item">
-        <img src="hoco-h45.jpg" alt="car holder">
-        <h2>hoco car holder magnetic </h2>
-          <p>In-car magnetic phone holder.
-            For 4.5 to 7 inches mobile devices.
-            For dashboard.</p>
-      </div>
-
-      <div class="item">
-        <img src="h17.jpg" alt="car holder">
-        <h2>Hoco, H17 Waves Rearview Mirror Car Holder</h2>
-        <p>Portable adapter Lightning to USB-A.
-          OTG function.
-          Supports 5Gbps data transfer.
-          Supports fast charging.</p>
-      </div>
-
-      <div class="item">
-        <img src="hoco-ca119.jpg" alt="moto holder">
-        <h2>Motorcycle holder "CA119 Follow" for rearview mirror- HOCO </h2>
-        <p>Motorcycle phone holder.
-          For 4.5 to 7 inches mobile devices.</p>
-      </div>
-
-      <div class="item">
-        <img src="Hoco-H20.jpg" alt="car holder">
-        <h2>Hoco H20 Mighty One Button Windshield Car Holder- HOCO </h2>
-        <p>Phone Holder Strong Clamping Long Arm Adjustable Rod</p>
-      </div>
-      <div class="item">
-        <img src="hoco-hw11.jpg" alt="car holder">
-        <h2>Car wireless charger "HW11 Jenny" for dashboard-hoco </h2>
-        <p>In-car wireless charging phone holder.
-          5W / 7.5W / 10W / 15W wireless output.
-          For 4.5 to 7 inches mobile devices.</p>
-      </div>
-      <div class="item">
-        <img src="hoco-cw41.jpg" alt="magnetic charge">
-        <h2>Wireless charger "CW41 Delight" 15W magnetic </h2>
-        <p>CW41 Delight, magnetic wireless charger, 2.5W / 5W / 7.5W / 10W / 15W output, for Apple Watch, phones, headset.</p>
-      </div>
-
-      <div class="item">
-        <img src="hoco cw39c.webp" alt="magnetic charge">
-        <h2>Wireless charger "CW39  15W magnetic </h2>
-        <p>CW41 Delight, magnetic wireless charger,for Apple Watch 7/6/5/4/3/2/1/se.</p>
-      </div>
-      <div class="item">
-        <img src="hoco ew59.jpg" alt="airbuds">
-        <h2>Hoco EW59 airbuds</h2>
-        <p>Hoco EW59 True Wireless BT Earbuds 4h call/music </p>
+        <p>MultiFUNCTIONAL SAFETY SOCKET USB-C+ USB-A x 3+socket x 4(1.5m).</p>
       </div>
       
-      <div class="item">
-      <img src="hoco-ew57-auspicious-clip-on-tws-headset-packaging-galaxy-black.jpg" alt="airbuds">
-      <h2>Hoco EW57 airbuds</h2>
-    <p>EW57 Auspicious, TWS headset with clip-on design, BT v5.3, 
-      charging case battery 450mAh, .</p>
-    </div>
 
-      <div class="item">
-        <img src="EW72.jpg" alt="airbuds">
-        <h2>HOCO EW72 airbuds </h2>
-        <p>HOCO EW72 Wireless Headphones with Charging Case (BT v5.4) Noise Reduction ENC</p>
-      </div>
-      <div class="item">
-        <img src="ew70.avif" alt="airbuds">
-        <h2>HOCO EW70 airbuds </h2>
-        <p> Bluetooth 5.4, chip: JL AC6973D4 2. Battery capacity: charging case 300mAh, 
-          earphone 35mAh 3. Use time: 6 hours 4. Size: 56*56*21mm;</p>
-      </div>
+     <!-- Product 17 -->
+<div class="item" data-category="speakers">
+  <img src="bs47.jpg" alt="BT-speaker">
+  <h2>BT Sport Wireless speaker BS47</h2>
+  <p>BT SPEAKER HOCO 360º.</p>
+</div>
 
-      <div class="item">
-        <img src="eq10plus.jpg" alt="airbuds">
-        <h2>HOCO EQ10 airbuds </h2>
-        <p> EQ10 Plus Harmony true wireless ANC+ENC Noise Reduction BT headset.
-           "Bluetooth 5.4 chip: JL AC7006A8 2. Battery capacity: charging case 300mAh</p>
-      </div>
+<!-- Product 18 -->
+<div class="item" data-category="speakers">
+  <img src="hoco-hc16.jpg" alt="BT-speaker">
+  <h2>BT Sport Wireless speaker HC16</h2>
+  <p>BT SPEAKER HOCO 360º.</p>
+</div>
 
-      <div class="item">
-        <img src="Hoco-EW64.webp" alt="airbuds">
-        <h2>HOCO EW64 airbuds </h2>
-        <p>HOCO EW64 Wireless Headphones with Charging Case (BT v5.4) Noise Reduction ENC</p>
-      </div>
+<!-- Product 19 -->
+<div class="item" data-category="speakers">
+  <img src="hoco-hc25.jpg" alt="BT-speaker">
+  <h2>BT Sport Wireless speaker HC25</h2>
+  <p>BT SPEAKER HOCO 360º.</p>
+</div>
 
-      <div class="item">
-        <img src="m101 hoco.jpg" alt="earphones">
-        <h2>HOCO M101 Earphones with microphone 3,5mm </h2>
-        <p>HOCO M101 Earphones with microphone 3,5mm </p>
-      </div>
 
-      <div class="item">
-        <img src="m101c.jpg" alt="earphones">
-        <h2>HOCO M101 Earphones with microphone type-c </h2>
-        <p>HOCO M101 Earphones with microphone type-c</p>
-      </div>
+    <!-- Product 20 -->
+<div class="item" data-category="powerbanks">
+  <img src="Q26A.jpg" alt="Power bank">
+  <h2>Power Bank Wireless Charger (10000 Mah PD20W)</h2>
+  <p>Magnetic wireless charging ultra-slim power bank and wired charging.</p>
+</div>
 
-      <div class="item">
-        <img src="c76a.jpg" alt="adapter">
-        <h2>Hoco C76A Plus Speed source PD20W charger</h2>
-        <p>Hoco C76A Plus - Speed Source PD/QC3.0/FCP Fast Charging EU Plug USB-C Charger (20W - 3.1A - 5V)</p>
-      </div>
-      <div class="item">
-        <img src="hoco c76 a pro.webp" alt="adapter">
-        <h2>Hoco C76A pro Plus Speed source PD20W charger</h2>
-        <p>Wall charger "C76A Speed source" PD3.0 EU Type-C output set with cable - HOCO </p>
-      </div>
-      <div class="item">
-        <img src="ring light.jpeg" alt="ring light ">
-        <h2>RGB Led 3D-56 Livestreaming Lamp Ring Light</h2>
-        <p>56 cm 7 colors </p>
-      </div>
-      <div class="item">
-        <img src="3d 36.jpg" alt="ring light ">
-        <h2>RGB Led 3D-36 Livestreaming Lamp Ring Light</h2>
-        <p>36 cm 7 colors </p>
-      </div> 
 
-      <div class="item">
-        <img src="cs52a.jpg" alt="adapter">
-        <h2>one of the best adapter from hoco</h2>
-        <p> </p>
-      </div>
+    <!-- Product 21 -->
+<div class="item" data-category="smartwatches">
+  <img src="hoco-y3.webp" alt="SMART WATCH">
+  <h2>Watch Y3 Pro</h2>
+  <p>Smart watch by Hoco Y3 Pro.</p>
+</div>
 
-      <div class="item">
-        <img src="45ws.jpeg" alt="adapter">
-        <h2>original adapter from samsung fast charge 45 w and 25 w</h2>
-        <p>one of the best adapter from samsung fast charge 45 w and 25 w </p>
-      </div>
-      <div class="item">
-        <img src="HD9.jpeg" alt="HOLDER">
-        <h2> HOLDER FOR LAPTOP FAN </h2>
-        <p> </p>
-      </div>
-      <div class="item">
-        <img src="memory card.jpeg" alt="memory card ">
-        <h2>memory card for phone </h2>
-        <p> </p>
-      </div>
+<!-- Product 22 -->
+<div class="item" data-category="smartwatches">
+  <img src="y12.jpg" alt="Smart Watch">
+  <h2>Watch Y12</h2>
+  <p>Smart watch by Hoco Y12.</p>
+</div>
 
-      <div class="item">
-        <img src="samsung type b.jpg" alt="cables ">
-        <h2>samsung type b cable </h2>
-        <p> </p>
-      </div>
-      <div class="item">
-        <img src="Samsung-Earphone-A23-Blue-Heads-1.jpg" alt="earphones">
-        <h2>samsung earphones </h2>
-        <p> </p>
-      </div>
-      <div class="item">
-        <img src="iphone jack.jpg" alt="cables ">
-        <h2>iphone jack lightning to 3.5 mm </h2>
-        <p> </p>
-      </div>
-    
-      <div class="item">
-        <img src="magafe-case.jpg" alt="cover">
-        <h2>magnetic phone case</h2>
-        <p> for s24/+/ultra 23/+/ultra iphone 12 pro max/13 pro max/14 pro /15 pro/15/15 pro max/16/16 pro/16 promax </p>
-      </div>
-     
-      <div class="item">
-        <img src="65w3p.jpg" alt="adapter ">
-        <h2>original samsung adapter 65 watt 3 port  </h2>
-        <p> </p>
-      </div>
 
-      <div class="item">
-        <img src="mouse.webp" alt="mouse ">
-        <h2>hoco mouse</h2>
-        <p> </p>
-      </div>
+   <!-- Product 26 -->
+<div class="item" data-category="car-accessories">
+  <img src="hoco-e51.jpg" alt="Car Wireless">
+  <h2>BT Car Wireless FM</h2>
+  <p>Bluetooth car wireless 3 output (2 USB + 1 Type-C) + LED and a clear call.</p>
+</div>
 
-      <div class="item">
-        <img src="camera lens.webp" alt="camera lens ">
-        <h2>camera  lens </h2>
-        <p> for iphone 12/12 pro/12 pro max/13 /13 pro /13 pro max/14 /14 pro /14 pro max /15/ 15pro /15 pro max/ s23 ultras /23 / 23plus /s24 ultras</p>
-      </div>
 
-      <div class="item">
-        <img src="hoco-x88.webp" alt="cables ">
-        <h2>cable C to IPHONE  </h2>
-        <p>  </p>
-      </div>
-      <div class="item">
-        <img src="ting holder hoco.jpg" alt="HOLDER ">
-        <h2>ting holder magnetic </h2>
-        <p>  </p>
-      </div>
+      <!-- Product 24 -->
+<div class="item" data-category="cables">
+  <img src="UPA30.jpg" alt="AUX">
+  <h2>AUX IP TO 3.5 mm (1m)</h2>
+  <p>AUX IP to 3.5 mm audio cable.</p>
+</div>
 
-      <div class="item">
-        <img src="hdmi cablee.webp" alt="cables ">
-        <h2>HDMI CABLE  </h2>
-        <p>1 METER/ 2 METERS/ 3 METERS  </p>
-      </div>
+<!-- Product 25 -->
+<div class="item" data-category="cables">
+  <img src="aux 3.5to3.5.jpg" alt="AUX">
+  <h2>AUX 3.5 mm to 3.5 mm (1m)</h2>
+  <p>AUX 3.5 mm to 3.5 mm audio cable.</p>
+</div>
 
-      <div class="item">
-        <img src="STICKIT.avif" alt="cables ">
-        <h2>STICK IT </h2>
-        <p> UP TO 5 COLOR STICK IT </p>
-      </div>
-    
-      <div class="item">
-        <img src="MAGSAFE POWER BANK.jpeg" alt="POWER BANK ">
-        <h2>APPLE POWER BANK  magnetic </h2>
-        <p>  </p>
-      </div>
-    
-      <div class="item">
-        <img src="HOLDER STICK IT.webp" alt="Car">
-        <h2>CAR HOLDER STICK</h2>
-        <p>  </p>
-      </div>
-    
-      <div class="item">
-        <img src="7 IN 1 CLEANER.jpg" alt="Car">
-        <h2>PHONE CLEANER </h2>
-        <p>  Have cleaning brush ,used to remove dirt particles and debris. Safe and eco friendly. have a soft fiber cloth easy for clean</p>
-      </div>
-    
-      <div class="item">
-        <img src="AIRPODS SILICONE CASE.webp" alt="Car">
-        <h2>PHONE CLEANER </h2>
-        <p> AIRPODS PRO 1 /PRO 2 /PRO 3/pro 4  </p>
-      </div>
-      <div class="item">
-        <img src="-hoco-gm18-luminous-.webp" alt="KEYBOARD MOUSE">
-        <h2>GAMING KEYBOARD WITH MOUSE GAMING </h2>
-        <p> Hoco GM18 Luminous Gaming Keyboard and Mouse Set- Keyboard: Mechanical feel keyboard. - Material: ABS + liquid silicone. </p>
-      </div>
-      <div class="item">
-        <img src="HOCO W55.webp" alt="HEADSET">
-        <h2>HEADSET HOCO W55 </h2>
-        <p>Battery capacity: 800mAh; Charging time: 2 hours Usage time: 90 hours; Standby time: 200 hoursSize: 195*185*84mm; Weight: 198g. </p>
-      </div>
-      <div class="item">
-        <img src="GIJBY CA-046.avif" alt="HEADSET">
-        <h2>HEADSET CA-046 </h2>
-        <p>GJBY Intelligent Headset with Noise Reduction for Sports and Mobile Phone Use CA-046 
-          Long Battery Life and Stereo Sound. </p>
-      </div>
-      <div class="item">
-        <img src="G-2.jpg" alt="HEADSET">
-        <h2>HEADSET G-2 </h2>
-        <p>GJBY G-2 Stereo Wired Gaming Headset With 3.5mm Jack And Microphone. </p>
-      </div>
-      <div class="item">
-        <img src="W54.jpg" alt="HEADSET">
-        <h2>HEADSET W54 </h2>
-        <p>W54 Young ANC BT headphones. eature. 1, Bluetooth 5.4,. 2. Battery capacity: 400mAh;
-           Charging time: 2 hours. 3. Usage time: 30 hours ;22 hours with ANC on </p>
-      </div>
 
-      <div class="item">
-        <img src="P47M.png" alt="HEADSET">
-        <h2>HEADSET P47M </h2>
-        <p>P47M -Interface: Wireless Bluetooth 5.0 -Bluetooth distance: up to 10m -Microphone: built in -
-          Special feature: Active Noise-Cancellation </p>
-      </div>
-      <div class="item">
-        <img src="N-P9MAX.jpg" alt="HEADSET">
-        <h2>HEADSET P47M </h2>
-        <p>Wireless Bluetooth 5.0 -Bluetooth distance: up to 10m -Microphone: built in -Special feature: Active Noise-Cancellation </p>
-      </div>
-      <div class="item">
-        <img src="P47.jpg" alt="HEADSET">
-        <h2>HEADSET P47 </h2>
-        <p>With the new Bluetooth 5.0 technology ensures fast and stable connections 
-          to your Bluetooth devices with low latency during audio/video streaming. </p>
-      </div>
-      <div class="item">
-        <img src="CA-107.jpeg" alt="HEADSET">
-        <h2>Headphones CA-107</h2>
-        <p>•Sport Wireless Headset. •Music and Call. •Light Weight Design. •Noise Isolating. •Smart Voice Report.
-           •Built-in Mic. •Magnets Earplug: Sport Wireless </p>
-      </div>
-      <div class="item">
-        <img src="MJ-6700.jpeg" alt="HEADSET">
-        <h2>Headphones MJ6700</h2>
-        <p>•Samsung AKG MJ6700 Wireless Bluetooth Earphones Headset Micro SD </p>
-      </div>
+  <!-- Product 27 -->
+<div class="item" data-category="cables">
+  <img src="UPA30HO.jpg" alt="cables">
+  <h2>USB C to 3.5 mm (1m)</h2>
+  <p>USB C to 3.5 mm audio cable.</p>
+</div>
 
-      <div class="item">
-        <img src="CW43.jpg" alt="Charger">
-        <h2>3 IN 1 Charger</h2>
-        <p>Wireless charger “CW43 Graceful” 3-in-1. Wireless charger for watch with 2  outputs for Lightning.
-           For phone, headset and watch</p>
-      </div>
+<!-- Product 28 -->
+<div class="item" data-category="car-accessories">
+  <img src="z46A hoco.jpg" alt="Car Wireless">
+  <h2>BT Car Wireless FM</h2>
+  <p>Bluetooth car wireless TYPE C.</p>
+</div>
 
-      <div class="item">
-        <img src="GM-10.jpg" alt="COOLING">
-        <h2>FAN COOLING </h2>
-        <p>Hoco GM10 Mobile Phone Cooler Ultra Quiet Fast Cooling </p>
-      </div>
+<!-- Product 29 -->
+<div class="item" data-category="car-accessories">
+  <img src="hoco-z46a-TYPE C TO IP.jpg" alt="car-accessories">
+  <h2>BT Car Wireless FM TO IPHONE</h2>
+  <p>Bluetooth car wireless TYPE C to IPHONE.</p>
+</div>
 
-      <div class="item">
-        <img src="hoco-j117a.jpg" alt="POWERBANK">
-        <h2>POWER BANK 10000mAh </h2>
-        <p>Power bank "J117A Esteem" PD20W + QC3.0 wireless charging 10000mAh - HOCO </p>
-      </div>
-  <div class="item">
-        <img src="hoco-q14.jpg" alt="POWERBANK">
-        <h2>POWER BANK 5000mAh </h2>
-        <p>Power bank "Q14 Ice Crystal" PD20W + QC3.0 wireless charging 5000mAh HOCO </p>
-      </div>
+<!-- Product 30 -->
+<div class="item" data-category="car-accessories">
+  <img src="hoco-e72-.jpg" alt="Car Wireless">
+  <h2>BT Car Wireless FM</h2>
+  <p>Bluetooth car wireless FM TRANSMITTER.</p>
+</div>
 
-      <div class="item">
-        <img src="hoco-j102.jpg" alt="POWERBANK">
-        <h2>POWER BANK 10000mAh </h2>
-        <p>Power bank "J102 Cool figure" PD20W + QC3.0 10000mAh - HOCO </p>
-      </div>
+<!-- Product 31 -->
+<div class="item" data-category="car-accessories">
+  <img src="E76.jpeg" alt="Car Wireless">
+  <h2>BT Car Wireless FM</h2>
+  <p>Bluetooth car wireless FM TRANSMITTER.</p>
+</div>
 
-  <div class="item">
-        <img src="45 w pd adapter.jpeg" alt="charger">
-        <h2>SAMSUNG charger 45w with cable </h2>
-        <p>Super-fast charging for a wide range of devices. With the 45W charger, you can get your Galaxy to full bars super-fast. </p>
-      </div>
+      <!-- Product 32 -->
+<div class="item" data-category="accessories">
+  <img src="Hoco-GM109.webp" alt="Pencil">
+  <h2>Hoco Pencil for iPhone, Android, and Windows System</h2>
+  <p>High-quality pencil for all devices.</p>
+</div>
 
-      <div class="item">
-        <img src="J132A.jpg" alt="POWERBANK">
-        <h2>power bank 20000mAh </h2>
-        <p>J132A Sabio 22.5W+PD20W fully compatible power bank with 3 cables(20000mAh). 
-          1. Capacity: 20000 mAh 74 Wh Rated Capacity: 11000 mAh 2. Input: USB-C: 18 W</p>
-      </div>
+<!-- Product 33 -->
+<div class="item" data-category="accessories">
+  <img src="hoco-ua31c.jpg" alt="Mini Size USB">
+  <h2>Adapter Type-C to USB-A "UA31C" - HOCO</h2>
+  <p>Portable adapter Type-C to USB-A. OTG function. Supports 5Gbps data transfer. Supports fast charging.</p>
+</div>
 
-      <div class="item">
-        <img src="hoco-j113-energy-bar-power-bank-ltn-5000mah-packaging.jpg" alt="POWERBANK">
-        <h2>power bank 5000mAh </h2>
-        <p>Power bank "J113 Energy-bar" 5000mAh for Lightning - HOCO</p>
-      </div>
+<!-- Product 34 -->
+<div class="item" data-category="accessories">
+  <img src="hoco-ua31a-lt.jpg" alt="Mini Size USB">
+  <h2>Adapter for Lightning to USB-A "UA31A" - HOCO</h2>
+  <p>Portable adapter Lightning to USB-A. OTG function. Supports 5Gbps data transfer. Supports fast charging.</p>
+</div>
 
-      <div class="item">
-        <img src="SAMSUNG CAR CHARGE.webp" alt="POWERBANK">
-        <h2>SAMSUNG CAR CHARGER ADAPTER </h2>
-        <p>The USB Type-C port lets you harness the power of up to 45W to recharge
-           your device with the incredible speed of Super Fast Charging 2.0.</p>
-      </div>
+
+     <!-- Product 35 -->
+<div class="item" data-category="car-accessories">
+  <img src="hoco-h45.jpg" alt="Car Holder">
+  <h2>Hoco Car Holder Magnetic</h2>
+  <p>In-car magnetic phone holder. For 4.5 to 7 inches mobile devices. For dashboard.</p>
+</div>
+
+<!-- Product 36 -->
+<div class="item" data-category="car-accessories">
+  <img src="h17.jpg" alt="Car Holder">
+  <h2>Hoco H17 Waves Rearview Mirror Car Holder</h2>
+  <p>Portable adapter Lightning to USB-A. OTG function. Supports 5Gbps data transfer. Supports fast charging.</p>
+</div>
+
+     <!-- Product 37 -->
+<div class="item" data-category="car-accessories">
+  <img src="hoco-ca119.jpg" alt="Moto Holder">
+  <h2>Motorcycle Holder "CA119 Follow" for Rearview Mirror - HOCO</h2>
+  <p>Motorcycle phone holder. For 4.5 to 7 inches mobile devices.</p>
+</div>
+
+<!-- Product 38 -->
+<div class="item" data-category="car-accessories">
+  <img src="Hoco-H20.jpg" alt="Car Holder">
+  <h2>Hoco H20 Mighty One Button Windshield Car Holder - HOCO</h2>
+  <p>Phone Holder Strong Clamping Long Arm Adjustable Rod.</p>
+</div>
+
+<!-- Product 39 -->
+<div class="item" data-category="car-accessories">
+  <img src="hoco-hw11.jpg" alt="Car Holder">
+  <h2>Car Wireless Charger "HW11 Jenny" for Dashboard - HOCO</h2>
+  <p>In-car wireless charging phone holder. 5W / 7.5W / 10W / 15W wireless output. For 4.5 to 7 inches mobile devices.</p>
+</div>
+
+      <!-- Product 42 -->
+<div class="item" data-category="cables">
+  <img src="hoco-cw41.jpg" alt="Magnetic Charger">
+  <h2>Wireless Charger "CW41 Delight" 15W Magnetic</h2>
+  <p>CW41 Delight, magnetic wireless charger, 2.5W / 5W / 7.5W / 10W / 15W output, for Apple Watch, phones, headset.</p>
+</div>
+
+<!-- Product 43 -->
+<div class="item" data-category="cables">
+  <img src="hoco cw39c.webp" alt="Magnetic Charger">
+  <h2>Wireless Charger "CW39" 15W Magnetic</h2>
+  <p>Magnetic wireless charger, for Apple Watch 7/6/5/4/3/2/1/SE.</p>
+</div>
+
+     <!-- Product 44 -->
+<div class="item" data-category="airbuds">
+  <img src="hoco ew59.jpg" alt="Airbuds">
+  <h2>Hoco EW59 Airbuds</h2>
+  <p>Hoco EW59 True Wireless BT Earbuds 4h call/music.</p>
+</div>
+
+<!-- Product 45 -->
+<div class="item" data-category="airbuds">
+  <img src="hoco-ew57-auspicious-clip-on-tws-headset-packaging-galaxy-black.jpg" alt="Airbuds">
+  <h2>Hoco EW57 Airbuds</h2>
+  <p>EW57 Auspicious, TWS headset with clip-on design, BT v5.3, charging case battery 450mAh.</p>
+</div>
+
+<!-- Product 46 -->
+<div class="item" data-category="airbuds">
+  <img src="EW72.jpg" alt="Airbuds">
+  <h2>HOCO EW72 Airbuds</h2>
+  <p>HOCO EW72 Wireless Headphones with Charging Case (BT v5.4) Noise Reduction ENC.</p>
+</div>
+
+<!-- Product 47 -->
+<div class="item" data-category="airbuds">
+  <img src="ew70.avif" alt="Airbuds">
+  <h2>HOCO EW70 Airbuds</h2>
+  <p>Bluetooth 5.4, chip: JL AC6973D4, battery capacity: charging case 300mAh, earphone 35mAh, use time: 6 hours.</p>
+</div>
+
+<!-- Product 48 -->
+<div class="item" data-category="airbuds">
+  <img src="eq10plus.jpg" alt="Airbuds">
+  <h2>HOCO EQ10 Airbuds</h2>
+  <p>EQ10 Plus Harmony true wireless ANC+ENC Noise Reduction BT headset, Bluetooth 5.4, battery capacity 300mAh.</p>
+</div>
+
+<!-- Product 49 -->
+<div class="item" data-category="airbuds">
+  <img src="Hoco-EW64.webp" alt="Airbuds">
+  <h2>HOCO EW64 Airbuds</h2>
+  <p>HOCO EW64 Wireless Headphones with Charging Case (BT v5.4) Noise Reduction ENC.</p>
+</div>
+
+     <!-- Product 50 -->
+<div class="item" data-category="earphones">
+  <img src="m101 hoco.jpg" alt="Earphones">
+  <h2>HOCO M101 Earphones with Microphone 3.5mm</h2>
+  <p>HOCO M101 Earphones with Microphone 3.5mm.</p>
+</div>
+
+<!-- Product 51 -->
+<div class="item" data-category="earphones">
+  <img src="m101c.jpg" alt="Earphones">
+  <h2>HOCO M101 Earphones with Microphone Type-C</h2>
+  <p>HOCO M101 Earphones with Microphone Type-C.</p>
+</div>
+
+<!-- Product 52 -->
+<div class="item" data-category="adapters">
+  <img src="c76a.jpg" alt="adapters">
+  <h2>Hoco C76A Plus Speed Source PD20W Charger</h2>
+  <p>Hoco C76A Plus - Speed Source PD/QC3.0/FCP Fast Charging EU Plug USB-C Charger (20W - 3.1A - 5V).</p>
+</div>
+
+<!-- Product 53 -->
+<div class="item" data-category="adapters">
+  <img src="hoco c76 a pro.webp" alt="adapters">
+  <h2>Hoco C76A Pro Plus Speed Source PD20W Charger</h2>
+  <p>Wall Charger "C76A Speed Source" PD3.0 EU Type-C Output Set with Cable - HOCO.</p>
+</div>
+
+     <!-- Product 54 -->
+<div class="item" data-category="accessories">
+  <img src="ring light.jpeg" alt="ring light">
+  <h2>RGB Led 3D-56 Livestreaming Lamp Ring Light</h2>
+  <p>56 cm 7 colors</p>
+</div>
+
+<!-- Product 55 -->
+<div class="item" data-category="accessories">
+  <img src="3d 36.jpg" alt="ring light">
+  <h2>RGB Led 3D-36 Livestreaming Lamp Ring Light</h2>
+  <p>36 cm 7 colors</p>
+</div>
+
+    <!-- Product 56 -->
+<div class="item" data-category="adapters">
+  <img src="cs52a.jpg" alt="adapter">
+  <h2>One of the best adapters from Hoco</h2>
+  <p></p>
+</div>
+
+<!-- Product 57 -->
+<div class="item" data-category="adapters">
+  <img src="45ws.jpeg" alt="adapter">
+  <h2>Original adapter from Samsung Fast Charge 45W and 25W</h2>
+  <p>One of the best adapters from Samsung Fast Charge 45W and 25W.</p>
+</div>
+
+      <!-- Product 58 -->
+<div class="item" data-category="laptop">
+  <img src="HD9.jpeg" alt="HOLDER">
+  <h2>Holder for Laptop Fan</h2>
+  <p></p>
+</div>
+
+   <!-- Product 59 -->
+<div class="item" data-category="accessories">
+  <img src="memory card.jpeg" alt="Memory Card">
+  <h2>Memory Card for Phone</h2>
+  <p></p>
+</div>
+
+<!-- Product 60 -->
+<div class="item" data-category="cables">
+  <img src="samsung type b.jpg" alt="Samsung Type B Cable">
+  <h2>Samsung Type B Cable</h2>
+  <p></p>
+</div>
+
+    <!-- Product 61 -->
+<div class="item" data-category="earphones">
+  <img src="Samsung-Earphone-A23-Blue-Heads-1.jpg" alt="Samsung Earphones">
+  <h2>Samsung Earphones</h2>
+  <p></p>
+</div>
+
+<!-- Product 62 -->
+<div class="item" data-category="cables">
+  <img src="iphone jack.jpg" alt="iPhone Jack Lightning to 3.5 mm">
+  <h2>iPhone Jack Lightning to 3.5 mm</h2>
+  <p></p>
+</div>
+
+<!-- Product 63 -->
+<div class="item" data-category="covers">
+  <img src="magafe-case.jpg" alt="Magnetic Phone Case">
+  <h2>Magnetic Phone Case</h2>
+  <p>For S24/+/Ultra, 23/+/Ultra, iPhone 12 Pro Max/13 Pro Max/14 Pro/15 Pro/15/15 Pro Max/16/16 Pro/16 Pro Max</p>
+</div>
+
+<!-- Product 64 -->
+<div class="item" data-category="adapters">
+  <img src="65w3p.jpg" alt="Original Samsung Adapter 65 Watt 3 Port">
+  <h2>Original Samsung Adapter 65 Watt 3 Port</h2>
+  <p></p>
+</div>
+
+
+  <!-- Product 65 -->
+<div class="item" data-category="laptop">
+  <img src="mouse.webp" alt="Hoco Mouse">
+  <h2>Hoco Mouse</h2>
+  <p></p>
+</div>
+
+ <!-- Product 66 -->
+<div class="item" data-category="Accessories">
+  <img src="camera lens.webp" alt="Camera Lens">
+  <h2>Camera Lens</h2>
+  <p>For iPhone 12/12 Pro/12 Pro Max/13/13 Pro/13 Pro Max/14/14 Pro/14 Pro Max/15/15 Pro/15 Pro Max/S23 Ultra/S23/S23 Plus/S24 Ultra</p>
+</div>
+
+     <!-- Product 67 -->
+<div class="item" data-category="cables">
+  <img src="hoco-x88.webp" alt="Cable C to iPhone">
+  <h2>Cable C to iPhone</h2>
+  <p></p>
+</div>
+
+<!-- Product 68 -->
+<div class="item" data-category="accessories">
+  <img src="ting holder hoco.jpg" alt="Magnetic Holder">
+  <h2>Ting Holder Magnetic</h2>
+  <p></p>
+</div>
+
+<!-- Product 69 -->
+<div class="item" data-category="cables">
+  <img src="hdmi cablee.webp" alt="HDMI Cable">
+  <h2>HDMI Cable</h2>
+  <p>1 Meter / 2 Meters / 3 Meters</p>
+</div>
+
+<!-- Product 70 -->
+<div class="item" data-category="accessories">
+  <img src="STICKIT.avif" alt="Stick It">
+  <h2>Stick It</h2>
+  <p>Up to 5 Color Stick It</p>
+</div>
+
+<!-- Product 71 -->
+<div class="item" data-category="powerbanks">
+  <img src="MAGSAFE POWER BANK.jpeg" alt="Apple Power Bank Magnetic">
+  <h2>Apple Power Bank Magnetic</h2>
+  <p></p>
+</div>
+
+<!-- Product 72 -->
+<div class="item" data-category="car-accessories">
+  <img src="HOLDER STICK IT.webp" alt="Car Holder Stick">
+  <h2>Car Holder Stick</h2>
+  <p></p>
+</div>
+
+<!-- Product 73 -->
+<div class="item" data-category="accessories">
+  <img src="7 IN 1 CLEANER.jpg" alt="Phone Cleaner">
+  <h2>Phone Cleaner</h2>
+  <p>Has cleaning brush, used to remove dirt particles and debris. Safe and eco-friendly. Comes with a soft fiber cloth for easy cleaning.</p>
+</div>
+
+<div class="item" data-category="accessories">
+  <img src="AIRPODS SILICONE CASE.webp" alt="Airpods Silicone Case">
+  <h2>Phone Cleaner</h2>
+  <p>Airpods Pro 1/Pro 2/Pro 3/Pro 4</p>
+</div>
+
+      <!-- Product 75 -->
+<div class="item" data-category="laptop">
+  <img src="-hoco-gm18-luminous-.webp" alt="Gaming Keyboard with Mouse">
+  <h2>Gaming Keyboard with Mouse</h2>
+  <p>Hoco GM18 Luminous Gaming Keyboard and Mouse Set - Keyboard: Mechanical feel keyboard. Material: ABS + liquid silicone.</p>
+</div>
+
+     <!-- Product 76 -->
+<div class="item" data-category="headsets">
+  <img src="HOCO W55.webp" alt="Headset Hoco W55">
+  <h2>Headset Hoco W55</h2>
+  <p>Battery capacity: 800mAh; Charging time: 2 hours. Usage time: 90 hours; Standby time: 200 hours. Size: 195*185*84mm; Weight: 198g.</p>
+</div>
+
+<!-- Product 77 -->
+<div class="item" data-category="headsets">
+  <img src="GIJBY CA-046.avif" alt="Headset CA-046">
+  <h2>Headset CA-046</h2>
+  <p>GJBY Intelligent Headset with Noise Reduction for Sports and Mobile Phone Use CA-046. Long Battery Life and Stereo Sound.</p>
+</div>
+
+<!-- Product 78 -->
+<div class="item" data-category="headsets">
+  <img src="G-2.jpg" alt="Headset G-2">
+  <h2>Headset G-2</h2>
+  <p>GJBY G-2 Stereo Wired Gaming Headset with 3.5mm Jack and Microphone.</p>
+</div>
+
+<!-- Product 79 -->
+<div class="item" data-category="headsets">
+  <img src="W54.jpg" alt="Headset W54">
+  <h2>Headset W54</h2>
+  <p>W54 Young ANC BT headphones. Feature: 1. Bluetooth 5.4. 2. Battery capacity: 400mAh; Charging time: 2 hours. 3. Usage time: 30 hours; 22 hours with ANC on.</p>
+</div>
+    <!-- Product 1 -->
+<div class="item" data-category="headsets">
+  <img src="P47M.png" alt="HEADSET">
+  <h2>HEADSET P47M</h2>
+  <p>P47M - Interface: Wireless Bluetooth 5.0 - Bluetooth distance: up to 10m - Microphone: built-in - Special feature: Active Noise-Cancellation</p>
+</div>
+
+<!-- Product 2 -->
+<div class="item" data-category="headsets">
+  <img src="N-P9MAX.jpg" alt="HEADSET">
+  <h2>HEADSET P47M</h2>
+  <p>Wireless Bluetooth 5.0 - Bluetooth distance: up to 10m - Microphone: built-in - Special feature: Active Noise-Cancellation</p>
+</div>
+
+<!-- Product 3 -->
+<div class="item" data-category="headsets">
+  <img src="P47.jpg" alt="HEADSET">
+  <h2>HEADSET P47</h2>
+  <p>With the new Bluetooth 5.0 technology ensures fast and stable connections to your Bluetooth devices with low latency during audio/video streaming.</p>
+</div>
+
+<!-- Product 4 -->
+<div class="item" data-category="earphones">
+  <img src="CA-107.jpeg" alt="HEADSET">
+  <h2>Headphones CA-107</h2>
+  <p>• Sport Wireless Headset. • Music and Call. • Light Weight Design. • Noise Isolating. • Smart Voice Report. • Built-in Mic. • Magnets Earplug: Sport Wire</p>
+</div>
+
+<!-- Product 5 -->
+<div class="item" data-category="earphones">
+  <img src="MJ-6700.jpeg" alt="HEADSET">
+  <h2>Headphones MJ6700</h2>
+  <p>• Samsung AKG MJ6700 Wireless Bluetooth Earphones Headset Micro SD</p>
+</div>
+
+
+    <!-- Product 6 -->
+<div class="item" data-category="adapters">
+  <img src="CW43.jpg" alt="Charger">
+  <h2>3 IN 1 Charger</h2>
+  <p>Wireless charger “CW43 Graceful” 3-in-1. Wireless charger for watch with 2 outputs for Lightning. For phone, headset, and watch.</p>
+</div>
+
+   <!-- Product 7 -->
+<div class="item" data-category="accessories">
+  <img src="GM-10.jpg" alt="COOLING">
+  <h2>FAN COOLING</h2>
+  <p>Hoco GM10 Mobile Phone Cooler Ultra Quiet Fast Cooling</p>
+</div>
+
+<!-- Product 8 -->
+<div class="item" data-category="powerbanks">
+  <img src="hoco-j117a.jpg" alt="POWERBANK">
+  <h2>POWER BANK 10000mAh</h2>
+  <p>Power bank "J117A Esteem" PD20W + QC3.0 wireless charging 10000mAh - HOCO</p>
+</div>
+
+<!-- Product 9 -->
+<div class="item" data-category="powerbanks">
+  <img src="hoco-q14.jpg" alt="POWERBANK">
+  <h2>POWER BANK 5000mAh</h2>
+  <p>Power bank "Q14 Ice Crystal" PD20W + QC3.0 wireless charging 5000mAh HOCO</p>
+</div>
+
+<!-- Product 10 -->
+<div class="item" data-category="powerbanks">
+  <img src="hoco-j102.jpg" alt="POWERBANK">
+  <h2>POWER BANK 10000mAh</h2>
+  <p>Power bank "J102 Cool figure" PD20W + QC3.0 10000mAh - HOCO</p>
+</div>
+
+
+ <!-- Product 11 -->
+<div class="item" data-category="adapters">
+  <img src="45 w pd adapter.jpeg" alt="charger">
+  <h2>SAMSUNG charger 45w with cable</h2>
+  <p>Super-fast charging for a wide range of devices. With the 45W charger, you can get your Galaxy to full bars super-fast.</p>
+</div>
+
+     <!-- Product 1 -->
+<div class="item" data-category="powerbanks">
+  <img src="J132A.jpg" alt="POWERBANK">
+  <h2>Power bank 20000mAh</h2>
+  <p>J132A Sabio 22.5W+PD20W fully compatible power bank with 3 cables (20000mAh). 
+     1. Capacity: 20000 mAh 74 Wh Rated Capacity: 11000 mAh 
+     2. Input: USB-C: 18 W</p>
+</div>
+
+<!-- Product 2 -->
+<div class="item" data-category="powerbanks">
+  <img src="hoco-j113-energy-bar-power-bank-ltn-5000mah-packaging.jpg" alt="POWERBANK">
+  <h2>Power bank 5000mAh</h2>
+  <p>Power bank "J113 Energy-bar" 5000mAh for Lightning - HOCO</p>
+</div>
+
+<!-- Product 3 -->
+<div class="item" data-category="car-accessories">
+  <img src="SAMSUNG CAR CHARGE.webp" alt="car-accessories">
+  <h2>SAMSUNG CAR CHARGER ADAPTER</h2>
+  <p>The USB Type-C port lets you harness the power of up to 45W to recharge
+     your device with the incredible speed of Super Fast Charging 2.0.</p>
+</div>
+
 
     
     
@@ -812,20 +913,32 @@ footer p {
   </footer>
 
   <script>
-    function searchProducts() {
-      const input = document.getElementById("searchInput");
-      const filter = input.value.toLowerCase();
-      const productItems = document.getElementsByClassName("item");
+  
+  function filterProducts(category) {
+  const productItems = document.getElementsByClassName("item");
+  console.log("Filtering by category: " + category);
 
-      for (let i = 0; i < productItems.length; i++) {
-        const productName = productItems[i].getElementsByTagName("h2")[0];
-        if (productName.innerHTML.toLowerCase().indexOf(filter) > -1) {
-          productItems[i].style.display = "";
-        } else {
-          productItems[i].style.display = "none";
-        }
-      }
+  for (let i = 0; i < productItems.length; i++) {
+    const itemCategory = productItems[i].getAttribute("data-category");
+    console.log("Item category: " + itemCategory);
+
+    if (category === "all" || itemCategory === category) {
+      productItems[i].style.display = "";
+    } else {
+      productItems[i].style.display = "none";
     }
+  }
+  
+  const buttons = document.querySelectorAll(".toolbox button");
+  buttons.forEach(button => {
+    button.classList.remove("active");
+    if (button.textContent.trim().toLowerCase() === category.toLowerCase()) {
+      button.classList.add("active");
+    }
+  });
+}
+
+
   </script>
 </body>
 </html>

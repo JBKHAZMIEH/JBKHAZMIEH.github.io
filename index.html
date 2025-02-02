@@ -185,6 +185,28 @@ footer p {
       background-color: #f4c430;
       color: #333333;
     }
+  
+ 
+ .whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    text-decoration: none;
+  }
+
+  .whatsapp-icon {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .whatsapp-button:hover .whatsapp-icon {
+    transform: scale(1.4);
+    transition: transform 0.3s ease;
+  }
+  
   </style>
 </head>
 <body>
@@ -192,26 +214,30 @@ footer p {
   <header>
     <div class="container">
       <h1>Our Product List JBK Store</h1>
+      
     
-      <!-- Add the toolbox for category filtering -->
-      <div class="toolbox">
-        <button onclick="filterProducts('all')" class="active">All</button>
-        <button onclick="filterProducts('cables')">Cables</button>
-        <button onclick="filterProducts('adapters')">Adapters</button>
-        <button onclick="filterProducts('covers')">Covers</button>
-        <button onclick="filterProducts('Protection')">Protection</button>
-        <button onclick="filterProducts('headsets')">Headsets</button>
-        <button onclick="filterProducts('earphones')">Earphones</button>
-        <button onclick="filterProducts('smartwatches')">Smart Watch</button>
-        <button onclick="filterProducts('airbuds')">Airbuds</button>
-        <button onclick="filterProducts('speakers')">Speakers</button>
-        <button onclick="filterProducts('powerbanks')">Power Banks</button>
-        <button onclick="filterProducts('laptop')">Laptop Items</button>
-        <button onclick="filterProducts('accessories')">Accessories</button>
-        <button onclick="filterProducts('router')">Routers</button>
-        <button onclick="filterProducts('car-accessories')">Car Accessories</button>
-     
-      </div>
+<!-- Add the toolbox for category filtering -->
+<div class="toolbox">
+  <button onclick="filterProducts('all')" data-category="all" class="active">All</button>
+  <button onclick="filterProducts('phone')" data-category="phone">Phone</button>
+<button onclick="filterProducts('cables')" data-category="cables">Cables</button>
+<button onclick="filterProducts('adapters')" data-category="adapters">Adapters</button>
+<button onclick="filterProducts('covers')" data-category="covers">Covers</button>
+<button onclick="filterProducts('headsets')" data-category="headsets">Headsets</button>
+<button onclick="filterProducts('earphones')" data-category="earphones">Earphones</button>
+<button onclick="filterProducts('airbuds')" data-category="airbuds">Airbuds</button>
+<button onclick="filterProducts('smartwatches')" data-category="smartwatches">Smart Watches</button>
+<button onclick="filterProducts('speakers')" data-category="speakers">Speakers</button>
+<button onclick="filterProducts('powerbanks')" data-category="powerbanks">Power Banks</button>
+<button onclick="filterProducts('laptop')" data-category="laptop">Laptop Items</button>
+<button onclick="filterProducts('accessories')" data-category="accessories">Accessories</button>
+<button onclick="filterProducts('router')" data-category="router">Routers</button>
+<button onclick="filterProducts('car-accessories')" data-category="car-accessories">Car Accessories</button>
+<button onclick="filterProducts('playstation')" data-category="playstation">PlayStation</button>
+</div>
+
+      
+      
     </div>
   </header>
 
@@ -264,15 +290,15 @@ footer p {
       <p>Original Silicone Case for iPhone Series.</p>
     </div>
   
-    <div class="item" data-category="Protection">
-      <img src="protection-IPHONE.webp" alt="Protection">
+    <div class="item" data-category="covers">
+      <img src="protection-IPHONE.webp" alt="covers">
       <h2>PROTECTION FOR IPHONE</h2>
       <p>
    available for all iPhone Series
       </p>
     </div>
     
-    <div class="item" data-category="Protection">
+    <div class="item" data-category="covers">
       <img src="SAMSUNG PROTECTION.jpg" alt="Protection">
       <h2>PROTECTION FOR SAMSUNG</h2>
       <p></p>
@@ -630,14 +656,14 @@ footer p {
 <div class="item" data-category="laptop">
   <img src="HD9.jpeg" alt="HOLDER">
   <h2>Holder for Laptop Fan</h2>
-  <p></p>
+  <p>Laptop Holder Aluminium</p>
 </div>
 
    <!-- Product 59 -->
 <div class="item" data-category="accessories">
   <img src="memory card.jpeg" alt="Memory Card">
   <h2>Memory Card for Phone</h2>
-  <p></p>
+  <p>from 32 GB TILL 256 GB</p>
 </div>
 
 <!-- Product 60 -->
@@ -883,38 +909,207 @@ footer p {
 </div>
 
 
+<div class="item" data-category="headsets">
+  <img src="ca-042.jpg" alt="HEADSET">
+  <h2>HEADSET CA-042</h2>
+  <p>Gjby CA-042 BT Cat LED Wireless On-Ear Headphones .</p>
+</div>
     
+<div class="item" data-category="router">
+  <img src="MINI UPS.jpg" alt="ROUTER">
+  <h2>Mini ups for router </h2>
+  <p>10800mAh Mini DC UPS POE-531P - Hubs & Switches</p>
+</div>    
     
+<div class="item" data-category="car-accessories">
+  <img src="H54.jpg" alt="Car Holder">
+  <h2>Hoco Car Holder </h2>
+  <p>In-car  phone holder. For 4.5 to 7 inches mobile devices.</p>
+</div>
+
+<div class="item" data-category="car-accessories">
+  <img src="hoco-h18.jpg" alt="Car Holder">
+  <h2>Hoco Car Holder </h2>
+  <p>In-car  phone holder. For 4.5 to 7 inches mobile devices. For dashboard.</p>
+</div>
+   
+<div class="item" data-category="car-accessories">
+  <img src="kakusiga car holder.jpg" alt="Car Holder">
+  <h2>kakusiga  Car Holder </h2>
+  <p>In-car  phone holder. For 4.5 to 7 inches mobile devices. For dashboard.</p>
+</div>
+   
+<div class="item" data-category="car-accessories">
+  <img src="bavin.jpg" alt="Car Holder">
+  <h2>bavin moto holder  </h2>
+  <p>moto phone holder. For 4.5 to 7 inches mobile devices. For dashboard.</p>
+</div>
+   
+<div class="item" data-category="car-accessories">
+  <img src="hoco-ca73.jpg" alt="Car Holder">
+  <h2>HOCO moto holder  </h2>
+  <p>moto phone holder. For 4.5 to 7 inches mobile devices. For dashboard.</p>
+</div>
+              
+<!-- Product 2 -->
+<div class="item" data-category="powerbanks">
+  <img src="P60-2.jpg" alt="POWERBANK">
+  <h2> foneng Power bank 10000mAh</h2>
+  <p>P60 10000mAh Power Bank (2A & 2 Outputs)</p>
+</div>
     
+  <!-- Product 2 -->
+<div class="item" data-category="powerbanks">
+  <img src="fon20000.jpg" alt="POWERBANK">
+  <h2> foneng Power bank 20000mAh</h2>
+  <p>Foneng GT200 20000mAh Power Bank (22.5W & 3 Outputs)</p>
+</div>
     
+ <!-- Product 2 -->
+<div class="item" data-category="powerbanks">
+  <img src="fon3000.jpg" alt="POWERBANK">
+  <h2> foneng Power bank 30000mAh</h2>
+  <p>P55 30000mAh Power Bank (2.1A & 2 Outputs)</p>
+</div>
     
+<div class="item" data-category="powerbanks">
+  <img src="J133L-BK-1-550x550.jpg" alt="POWERBANK">
+  <h2> hoco Power bank 5000 Mah</h2>
+  <p>HOCO. Power Bank Magnetic J133 5000mAh PD Type-C 20W  </p>
+</div>
     
+<div class="item" data-category="adapters">
+  <img src="ADPTER APLPLE.jpeg" alt="Adapters">
+  <h2>Adapter for iPhone</h2>
+  <p>APPLE 20W & 35W USB-C POWER ADAPTER .</p>
+</div>       
     
+<div class="item" data-category="laptop">
+  <img src="gm19.jpg" alt="Hoco Mouse">
+  <h2>Hoco Mouse GM19</h2>
+  <p>Hoco, Gm19 Led Flashing Gamer Wired Mouse Regular</p>
+</div>
+<div class="item" data-category="laptop">
+  <img src="COTECI MOUSE.jpg" alt="Hoco Mouse">
+  <h2>COTECI MOUSE N KEYBOARD </h2>
+  <p>Keyboard and Mouse Set, Wireless 2.4 GHz and Bluetooth 2 Types of Connectivity Systems</p>
+</div>
+   
+<div class="item" data-category="laptop">
+  <img src="COTECI KEY.jpg" alt="Hoco Mouse">
+  <h2>COTECI STYLISH KEYBOARD </h2>
+  <p>COTECI Stylish Bluetooth Keyboard for Macbook ipad Tablet Magic Transparent Keyboard </p>
+</div>
+   
+<div class="item" data-category="laptop">
+  <img src="GM32.jpg" alt="Hoco Mouse">
+  <h2>HOCO KEYBOARD </h2>
+  <p>HOCO. Dual-mode Wireless Keyboard </p>
+</div>
+   
+<div class="item" data-category="laptop">
+  <img src="JR-V4383.png" alt="Hoco Mouse">
+  <h2>JERTECH Mouse JR4 </h2>
+  <p>Gaming optimized 2.4GHz wireless 2.0 connectivity</p>
+</div>
     
+      <!-- Product 17 -->
+<div class="item" data-category="speakers">
+  <img src="HC30.jpg" alt="BT-speaker">
+  <h2>BT Sport Wireless speaker HC30</h2>
+  <p>HOCO. Speaker HC30 Wireless Sports 5W Touch Panel and Colorful Led (Supports TF, USB, AUX)</p>
+</div>   
+
+<div class="item" data-category="speakers">
+  <img src="HC21.jpg" alt="BT-speaker">
+  <h2>HC21 Shadow Sports BT Speaker</h2>
+  <p>Usage time: 3 hours, Bluetooth version: 5.2, Battery capacity: 1200mAh, Power: 5W x 2</p>
+</div>   
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+<div class="item" data-category="playstation">
+  <img src="CONTRO.jpg" alt="PS4 Controller">
+  <h2>PS4 Controller</h2>
+  <p>Official Sony PlayStation 4 Dualshock 4 Wireless Controller</p>
+</div>
+
+    <!-- Product 21 -->
+    <div class="item" data-category="smartwatches">
+      <img src="Y24.webp" alt="SMART WATCH">
+      <h2>Watch Y24 HOCO</h2>
+      <p>Smart watch by Hoco Y24 .</p>
+    </div>
+    <div class="item" data-category="smartwatches">
+      <img src="Y26-SI-2-550x550.jpg" alt="SMART WATCH">
+      <h2>Watch Y26 HOCO</h2>
+      <p>Smart watch by Hoco Y26 .</p>
+    </div>
+    <div class="item" data-category="smartwatches">
+      <img src="Y13.webp" alt="SMART WATCH">
+      <h2>Watch Y13 HOCO</h2>
+      <p>Smart watch by Hoco Y13 .</p>
+    </div>
+    <div class="item" data-category="smartwatches">
+      <img src="Y27-BK-2-550x550.jpg" alt="SMART WATCH">
+      <h2>Watch Y27 HOCO</h2>
+      <p>Smart watch by Hoco Y27 .</p>
+    </div>
+    <div class="item" data-category="smartwatches">
+      <img src="Y7 PRO.jpeg" alt="SMART WATCH">
+      <h2>Watch Y7 PRO  HOCO</h2>
+      <p>Smart watch by Hoco Y7 PRO .</p>
+    </div>
+    <div class="item" data-category="smartwatches">
+      <img src="Y9.webp" alt="SMART WATCH">
+      <h2>Watch Y9 HOCO</h2>
+      <p>Smart watch by Hoco Y9.</p>
+    </div>
+    <div class="item" data-category="smartwatches">
+      <img src="y10.jpg" alt="SMART WATCH">
+      <h2>Watch Y10 HOCO</h2>
+      <p>Smart watch by Hoco Y10.</p>
+    </div>
+   
+    <div class="item" data-category="phone">
+      <img src="SAMSUNG.webp" alt="phone">
+      <h2>ALL SAMSUNG phone </h2>
+      <p>All kind of samsung available</p>
+    </div>
+    <div class="item" data-category="phone">
+      <img src="iPhone-15-and-pro-vs-iPhone-16-and-pro-all-phones-1.webp" alt="phone">
+      <h2>ALL IPHONE phones </h2>
+      <p>All kind of  iphone available</p>
+    </div>
+    <div class="item" data-category="phone">
+      <img src="phone hoco phones.jpeg" alt="phone">
+      <h2>HOCO children phone </h2>
+      <p>2-in-1 Type-C to Type-C / Lightning charging data cable, 1.5m, aluminum alloy connectors. .</p>
+    </div>
+    <div class="item" data-category="headsets">
+      <img src="HOCO 106.webp" alt="HEADSET">
+      <h2>GAMING headset HOCO</h2>
+      <p>Hoco W106 Tiger Gaming Headpone.</p>
+    </div>
     
     </div>
-  </section>
 
+    <a href="https://wa.me/96171090567" target="_blank" class="whatsapp-button">
+      <span>
+        <img src="whats.png" alt="WhatsApp" class="whatsapp-icon">
+      </span>
+    </a>
+    
+  
   <!-- Footer Section -->
   <footer>
     <div class="container">
-      <p>&copy; 2024 JBK. ALL RIGHTS RESERVED .FOR MORE INFO<a href="https://wa.me/71090567" target="_blank"> click Here</a>.</p>
+      <p>&copy; 2025 JBK. ALL RIGHTS RESERVED</p>
     </div>
   </footer>
 
   <script>
+    
   
-  function filterProducts(category) {
+    function filterProducts(category) {
   const productItems = document.getElementsByClassName("item");
   console.log("Filtering by category: " + category);
 
@@ -932,12 +1127,24 @@ footer p {
   const buttons = document.querySelectorAll(".toolbox button");
   buttons.forEach(button => {
     button.classList.remove("active");
-    if (button.textContent.trim().toLowerCase() === category.toLowerCase()) {
+    if (button.getAttribute("data-category") === category) {
       button.classList.add("active");
     }
   });
 }
+function searchItems() {
+  const searchInput = document.getElementById("searchInput").value.toLowerCase();
+  const productItems = document.getElementsByClassName("item");
 
+  for (let i = 0; i < productItems.length; i++) {
+    const itemName = productItems[i].getAttribute("data-name").toLowerCase();
+    if (itemName.includes(searchInput)) {
+      productItems[i].style.display = "";
+    } else {
+      productItems[i].style.display = "none";
+    }
+  }
+}
 
   </script>
 </body>
